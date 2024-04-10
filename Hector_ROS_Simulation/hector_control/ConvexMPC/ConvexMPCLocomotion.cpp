@@ -52,7 +52,7 @@ void ConvexMPCLocomotion::run(ControlFSMData &data)
 
   world_position_desired[0] += dt * v_des_world[0];
   world_position_desired[1] += dt * v_des_world[1];
-  world_position_desired[2] = 0.55; //.5;;;
+  world_position_desired[2] = 0.8; //.5;;;
 
   // get then foot location in world frame
   for (int i = 0; i < 2; i++)
@@ -93,7 +93,7 @@ void ConvexMPCLocomotion::run(ControlFSMData &data)
     {
       pBody_des[0] = seResult.position[0];
       pBody_des[1] = seResult.position[1];
-      pBody_des[2] = 0.55;
+      pBody_des[2] = 0.8;
 
       vBody_des[0] = 0;
       vBody_des[0] = 0;
@@ -148,6 +148,8 @@ void ConvexMPCLocomotion::run(ControlFSMData &data)
                         + seResult.vWorld * swingTimeRemaining[i];
 
       
+      //《MIT Cheetah 3：Design and Control of a Robust, Dynamic Quadruped Robot》, 基于CP点给出落脚点位置
+      // https://zhuanlan.zhihu.com/p/190028074
       double p_rel_max = 0.4;
       double pfx_rel = -0.015 + seResult.vWorld[0] * 0.5 * gait->_stance * dtMPC +
                        0.02 * (seResult.vWorld[0] - v_des_world[0]);
@@ -348,7 +350,7 @@ void ConvexMPCLocomotion::updateMPCIfNeeded(int *mpcTable, ControlFSMData &data,
                               seResult.rpy[2],    // 2
                               xStart,                                   // 3
                               yStart,                                   // 4
-                              0.55 ,   // 5
+                              0.6 ,   // 5
                               0,                                        // 6
                               0,                                        // 7
                               stateCommand->data.stateDes[11],  // 8

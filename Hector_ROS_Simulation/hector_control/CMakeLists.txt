@@ -18,8 +18,8 @@ find_package(catkin REQUIRED COMPONENTS
     std_msgs
     tf
     geometry_msgs
-    unitree_legged_msgs  
-)
+    unitree_legged_msgs
+    )
 find_package(gazebo REQUIRED)
 find_package(Boost REQUIRED)
 #find_package(qpoases)
