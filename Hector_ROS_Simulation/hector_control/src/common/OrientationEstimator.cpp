@@ -6,10 +6,11 @@
  */
 void CheaterOrientationEstimator::run() {
   //std::cout << "orientation" << std::endl;
-  this->_stateEstimatorData.result->orientation[0] =
-      this->_stateEstimatorData.lowState->imu.quaternion[0];
+  this->_stateEstimatorData.result->orientation[0] = this->_stateEstimatorData.lowState->imu.quaternion[0];
+
   this->_stateEstimatorData.result->orientation[1] =
       this->_stateEstimatorData.lowState->imu.quaternion[1];
+
   this->_stateEstimatorData.result->orientation[2] =
       this->_stateEstimatorData.lowState->imu.quaternion[2];
   this->_stateEstimatorData.result->orientation[3] =

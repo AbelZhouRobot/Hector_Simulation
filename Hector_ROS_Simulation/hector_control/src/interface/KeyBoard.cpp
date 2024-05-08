@@ -20,6 +20,7 @@ KeyBoard::KeyBoard(){
     _newSettings.c_lflag &= (~ICANON & ~ECHO);
     tcsetattr( fileno( stdin ), TCSANOW, &_newSettings );
 
+    //开辟线程运行runKeyBoard，获取键盘输入，改写指令
     pthread_create(&_tid, NULL, runKeyBoard, (void*)this);
 }
 

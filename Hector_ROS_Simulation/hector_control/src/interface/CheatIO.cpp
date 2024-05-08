@@ -26,6 +26,7 @@ CheatIO::CheatIO(std::string robot_name):IOInterface()
 
     signal(SIGINT, RosShutDown);
 
+    //在KeyBoard类型创建时，已经开始了“keyboard”数据读取循环，1k Hz的频率;
     cmdPanel = new KeyBoard();
 }
 
