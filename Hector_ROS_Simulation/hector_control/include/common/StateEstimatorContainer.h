@@ -112,6 +112,7 @@ class StateEstimatorContainer {
 
     // get result
     const StateEstimate&  getResult() {return *_data.result;}
+    
 
     // add estimator of given type
     template <typename EstimatorToAdd>
